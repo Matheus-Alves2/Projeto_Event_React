@@ -1,22 +1,36 @@
-import Logo from "../../assets/img/logo1.png"
-const Login = () => {
-    return (
-        <main className="event_login">
-            <div className="banner"></div>
-            <section className="login_section">
-                <img src={Logo} alt="Logo do Event" />
-                <form action="" className="login_form">
-                    <h1>Login</h1>
+import Logo from "../../assets/img/logo1.svg";
+import Imagem from "../../assets/img/login_imagem.svg"
+import Botao from "../../components/botao/Botao";
+import "./Login.css";
 
-                    <div className="login_event"></div>
-                    <div className="campo_login"></div>
-                    <label htmlFor="Email"></label>
-                    <input type="Email" />
-                    <div className="campo_input"></div>
-                    <label htmlFor="">Senha</label>
-                    <input type="passworld" />
-                </form>
-            </section>
-        </main>
-    )
-}
+const Login = () => {
+  return (
+    <main className="login-container">
+      <div className="banner_event"></div>
+
+      <section className="section-login">
+        <img src={Logo} alt="Logo do Event+" className="logo-event" />
+
+        <form className="form-login">
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input className="user" type="email" id="username" name="username"/>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="senha">Password</label>
+            <input className="senhaInput" type="password" id="senha" name="senha"/>
+          </div>
+
+          <div className="forgot-password">
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <Botao nomedoBotao="Login" />
+        </form>
+      </section>
+    </main>
+  );
+};
+
+export default Login;
