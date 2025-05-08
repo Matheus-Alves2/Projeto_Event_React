@@ -1,79 +1,72 @@
-.login-container {
+.mae_de_todas{
     display: flex;
     height: 100vh;
-    font-family: sans-serif;
-  }
-  
-  .banner_event {
-    flex: 1;
-    background-color: #B51D44;
-    background-image: url('../../assets/img/login_imagem.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-  
-  .section-login {
-    flex: 1;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-  }
-  
-  .logo-event {
-    width: 200px;
-    margin-bottom: 60px;
+}
     
-  }
+.banner{
+  flex: 1;
+  display: flex;
+  background-color: #CC3F55;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.section_login{
+    flex: 1;
+    display: flex;
   
-  .form-login {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.campo_imput{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 17%;
+}
+.campos_login{
+    height: 57% ;
+}   
+
+.campo_imput input{
+ border-top: none;
+ border-left: none;
+ border-right: none;
+ width: 350px;
+
+ outline: none;
+}
+.email {
+    padding-top: 50px;
+}
+.mudar_senha {
+    color: gray;
+    font-size: 13px;
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+.form_login {
     width: 100%;
-    max-width: 300px;
+    
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group label {
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #B4A9A9;
-  }
-  
-  .form-group input {
-    width: 336px;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid black;
-    outline: none;
-  }
-  
-.senhaInput {
-
-  }
-  
-  .user {
-
-  }
+    /* justify-content: center; */
+    place-items: center;
+}
 
 
-  .forgot-password {
-    text-align: right;
-    font-size: 12px;
-  }
-  
-  .forgot-password a {
-    text-decoration: none;
-    color: #A6A0A0;
-    display: flex;
-    justify-content: space-around;
-  }
-  
+@media screen and (max-width: 768px) {
+
+    /*0px -> 768px*/
+    .banner  {
+        display: none;
+    }
+    .campo_imput input{
+        width: 200px;
+    }
+    
+}

@@ -1,1 +1,1 @@
-# Projeto_Event_React
+# Event-React
