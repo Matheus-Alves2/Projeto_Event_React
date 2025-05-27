@@ -1,36 +1,52 @@
 import "./Cadastro.css";
-import Botao from "../botao/Botao"
+import Botao from "../botao/Botao";
+import Imagem from "../Imagem/Imagem";
 
-const Cadastro = (promps) => {
-    return(
-            <section className="section_cadastro">
-                <form action="" className="layuot_grid form_cadastro">
-                    <h1>{promps.tituloCadastro}</h1>
+const Cadastro = (props) => {
+    return (
+        <main className="layout_grid main_cadastro">
+            <form className="layout_grid form_cadastro" onSubmit={props.onSubmit}>
+                <div className="titulo">
+                    <h1>{props.titulo_cadastro}</h1>
                     <hr />
-                    <div className="campos_cadastro">
-                        <div className="banner_cadastro">
-                            <img src={promps.img_banner} />
-                         </div>
-                        <div className="campo_preen">
-                         <div className="campo_cad_nome">
-                            <label htmlFor=""></label>
-                            <input type="text" nome="nome" placeholder={promps.nomes}/>
-                            </div>
-                         <div className="campo_cad_genero" style={{display:promps.visibilidade}}>
-                         <label htmlFor="genero"></label>
-                            <select name="genero" id="">
-                            <option  value="" disabled selected>Selecione</option>
-                            <option value="">Tango</option>
-                            <option value="">Haddad</option>
-                            <option value="">Vietnã</option>
-                         </select>
-                            </div>
-                         <Botao nomeBotao="Cadastrar 👍"/>
-                        </div>
+                </div>
+
+                <section className="layout_grid section_cadastro">
+                    <div className="banner_cadastro">
+                        <Imagem imagem={props.imagem} alt="Banner do cadastro" />
                     </div>
-                </form>
-            </section>
-    )
-}
+
+                    <div className="campos_cadastro">
+                        <div className="campo_cad_titulo">
+                            <label htmlFor="titulo"></label>
+                            <input
+                                type="text"
+                                name="titulo"
+                                placeholder={props.nome}
+                                value={props.valor}
+                                onChange={props.onChange}
+                            />
+                        </div>
+
+                        {props.exibir_tipo_evento && (
+                            <div className="campo_tipo_evento">
+                                <label htmlFor="tipo_evento"></label>
+                                <select name="tipo_evento" id="tipo_evento" defaultValue="">
+                                    <option value="" disabled>Tipo evento</option>
+                                    <option value="op1">op 1</option>
+                                    <option value="op2">op 2</option>
+                                    <option value="op3">op 3</option>
+                                </select>
+                                <hr />
+                            </div>
+                        )}
+
+                        <Botao nomeDoBotao="Cadastrar" tipo="submit" />
+                    </div>
+                </section>
+            </form>
+        </main>
+    );
+};
 
 export default Cadastro;

@@ -1,142 +1,141 @@
-.listagem{
-    background-color: #b51d44;
-    min-height: calc(100vh - (75px + 399px + 40px));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-
-
-
-
-.linha_titulo{
-   max-width: 120px;
-   width: 100%;
-   border-style: solid;
-   border-width: 1px;
-   border-color: white;
-   margin-top: 5px;
-   margin-bottom: 20px;
+.listagem {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  background-color: #B51D44;
+  color: white;
 }
 
-
-.item_lista img{
-    height: 15px;
+.listagem h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 19px;
 }
 
-.tabela{
-    width: 57%;
-    margin-top: 30px;
+.listagem hr {
+  max-width: 200px;
+  width: 100%;
+  border-style: solid;
+  border-top-width: 1px;
+  border-color: white;
+  margin-top: 5px;
+  color: white;
 }
 
-
-.tabela table{
-    width: 100%;
-    border-collapse: collapse;
-
+.item_lista img {
+  height: 20px;
 }
 
-
-.tabela .table_cabecalho :first-child{
-    width: 100px;
-
+.tabela {
+  margin-top: 40px;
+  text-align: center;
+  margin-left: -60px;
 }
 
-
-.tabela .table_cabecalho :nth-child(2){
-    width: 150px;
+.tabela .tabela_cabecalho :first-child {
+  width: 500px;
 }
 
-.tabela .table_cabecalho th{
-    width: 100px;   
-}
-.right{
-    text-align: right;
-
-}
-.left{
-    text-align: left;
-    padding-left: 10px;
-
+.tabela .tabela_cabecalho :nth-child(2) {
+  width: 500px;
 }
 
-
-.item_lista td{
-    /* desgrudar o item do titulo */
-    padding: 20px 12px 10px 7px ;
-    color: black;
+.tabela .tabela_cabecalho th {
+  border-bottom: 1px solid white;
+  width: 100px;
+  margin-top: 40px;
 }
 
-.item_lista{
-    text-align: center;
-    border-bottom:  solid 1px #73061B20;
-
+.item_lista td {
+  padding: 30px 5px 30px;
+  border-bottom: 1px solid white;
+  width: 100px;
 }
 
-.listagem h1{
-    color: black;
-    font-size: smaller;
-}
+/* Responsividade */
 
-.tabela_cabecalho th{
-    color: black;
-    font-size: small;
-    padding-bottom: 5px;
+@media screen and (max-width: 768px) {
+  .listagem {
+    height: auto;
+    padding: 20px;
+  }
 
-}
+  .listagem h1 {
+    font-size: 16px;
+  }
 
-.tabela_cabecalho{
-    border-bottom: black 1px solid;
-}
+  .tabela {
+    width: 90%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
 
-.item_lista {
-    border-bottom: black 1px solid;
-    
-}
+  .tabela .tabela_cabecalho :first-child,
+  .tabela .tabela_cabecalho :nth-child(2) {
+    width: auto;
+    padding: 5px;
+  }
 
+  .tabela .tabela_cabecalho th {
+    font-size: 12px;
+  }
 
+  .item_lista td {
+    padding: 15px 5px;
+    font-size: 12px;
+  }
 
-/* .divi{
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ffffff84;
-    margin-top: 5px;
-    border-collapse: collapse;
-} */
+  .listagem hr {
+    max-width: 150px;
+  }
+  }
+  
 
-@media screen and (max-width: 768px){
-
-    .tabela thead{
-        display: none;
+  @media screen and (max-width: 768px) {
+    .listagem {
+      height: auto;
+      padding: 20px 10px;
+      text-align: center;
     }
-
-
-    .item_lista td{
-        display: grid;
-        text-align: left;
-        padding: 10px 10px 10px 0;
-        grid-template-columns: 10ch auto;
-
+  
+    .listagem h1 {
+      font-size: 16px;
+      line-height: 1.3;
     }
-
-
-    .item_lista td::before{
-        content: attr(data-cell) ":";
-        font-weight: 700;
-        width: 80px;
-        text-align: left;
+  
+    .listagem hr {
+      max-width: 120px;
+      margin: 10px auto;
     }
-
-    .item_lista td:last-child{
-        margin-bottom: 24px;
+  
+    .tabela {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 20px;
+      overflow-x: auto; 
     }
-
-    .item_lista td:first-child{
-        margin-top: 24px;
+  
+    .tabela table {
+      min-width: 500px;
     }
-
-
-}
-
+  
+    .tabela .tabela_cabecalho th {
+      font-size: 13px;
+      padding: 10px 5px;
+    }
+  
+    .item_lista td {
+      padding: 12px 5px;
+      font-size: 13px;
+    }
+  
+    .item_lista img {
+      height: 16px;
+    }
+  }

@@ -1,9 +1,7 @@
 import "./Botao.css"
-
-const Botao = (promps) => {
+const Botao = (props) => {
     return(
-        <button className="botao">{promps.nomeBotao}</button>
+        <button className="botao">{props.nomeDoBotao}</button>
     )
 }
-
 export default Botao;

@@ -1,72 +1,99 @@
-.mae_de_todas{
-    display: flex;
-    height: 100vh;
+body{
+ /* margin: 0;*/
+ /* padding: 0;*/
+ /* height: 100%;*/
+  font-family: "Poppins", sans-serif;
+ /* box-sizing: border-box;*/
+ /* overflow: hidden;*/
 }
-    
-.banner{
-  flex: 1;
+
+.login-container{
+ overflow:hidden;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+.login-container {
   display: flex;
-  background-color: #CC3F55;
+  height: 100vh;
+}
+
+.login-banner {
+  background-image: url("../../assets/img/login_imagem.svg");
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #b51d45;
+}
+
+.login-content {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
-
-.section_login{
-    flex: 1;
-    display: flex;
-  
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.login-logo {
+  width: 250px;
+  margin-bottom: 90px;
 }
 
-.campo_imput{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 17%;
-}
-.campos_login{
-    height: 57% ;
-}   
-
-.campo_imput input{
- border-top: none;
- border-left: none;
- border-right: none;
- width: 350px;
-
- outline: none;
-}
-.email {
-    padding-top: 50px;
-}
-.mudar_senha {
-    color: gray;
-    font-size: 13px;
-    padding-bottom: 30px;
-    padding-top: 15px;
+.login-form {
+  height: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-.form_login {
-    width: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    place-items: center;
+.login-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 15px;
+  color: #A6A0A0;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.login-input input {
+  height: 25px;
+  width: 350px;
+  padding: 0px 10px;
+  border-color: #00000045;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.login-forgot-password {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #A6A0A0;
+  font-weight: 500;
+}
+
+.login-forgot-password:hover {
+  color: #B51D44;
 }
 
 
 @media screen and (max-width: 768px) {
-
-    /*0px -> 768px*/
-    .banner  {
-        display: none;
-    }
-    .campo_imput input{
-        width: 200px;
-    }
-    
+  .login-banner {
+      display: none;
+  }
 }

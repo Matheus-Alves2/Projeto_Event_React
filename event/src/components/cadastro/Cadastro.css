@@ -1,84 +1,108 @@
+body {
+    font-family: "Poppins", sans-serif; 
+  }
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 13px;
+    font-family: poppins;
+}
+
+.titulo hr {
+    border-color: #B51D44;
+    width: 230px;
+    border-style: solid;
+    border-top-width: 2px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+
 .section_cadastro {
-    color: black;
-    min-height: 399px;
-    padding: 35px 0 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 320px;
+    gap: 60px; 
+}
+
+.banner_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_cadastro img {
+    width: 436px;
+    height: 238px;
 }
 
 .form_cadastro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form_cadastro h1 {
-    text-transform: uppercase;
-    font-size: small;  
-}
-
-.form_cadastro hr {
-    max-width: 100px;
     width: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #ad0729;
-    margin-top: 5px;
-}
-
-.campos_cadastro {
+    height: 50%;
     display: flex;
     align-items: center;
-
-    padding-top: 35px;
-    gap: 25px;
+    flex-direction: column;
+    margin-bottom: 65px;
 }
 
-/* Modificando o input e select */
-
-.campo_cad_nome input,
-.campo_cad_genero select 
-{   
-    border-radius: 6px;
+.campo_cad_titulo input {
+    margin-bottom: 85px;
+    padding: 5px 5px;
+    border: none;
+    border-bottom: 1px solid black;
     outline: none;
-    padding: 0 5px;
-    width: 300px;
-    height: 30px;
-    margin-top: 7px;
+    font-size: 15px;
+    width: 356px;
 }
 
-.campo_cad_nome input,
-.campo_cad_genero select {
-    display: flex;
-    margin: 30px;
-
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    outline: none;
-}
-.campo_cad_genero{
-    margin-bottom: 30PX;
-    color: gray;
-}
-
-.campo_preen {
+.campo_tipo_evento {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    place-items: center;
-
-    padding: 0 30px 30px 30px;
-
+    margin-bottom: 40px; 
 }
 
-@media screen and (max-width: 880px) {
-    .campos_cadastro {
-        flex-direction: column;
-        align-items: center;
+.campo_tipo_evento select {
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+    color: #B4A9A9;
+    width: 356px;
+    font-family: 'Poppins', sans-serif;
+}
+  
+  
+  .campo_tipo_evento hr {
+    margin-top: 4px;
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .section_cadastro {
+      flex-direction: column;
+      height: auto;
+      gap: 20px;
     }
-}
-
-@media screen and (max-width: 340px) {
-    .form_cadastro h1 {
-        font-size: 20px;
+  
+    .banner_cadastro {
+      display: none;
     }
-}
+  
+    .form_cadastro {
+      margin-bottom: 30px;
+    }
+  
+    .campo_cad_titulo input,
+    .campo_tipo_evento select {
+      width: 90%;
+    }
+  }
+  

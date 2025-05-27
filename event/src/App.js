@@ -1,16 +1,9 @@
-//chamar as telas do index.js
-import { Route } from 'react-router-dom';
 import './App.css';
-import Rotas from "./routes/Routes"
-
+import Routes from "./Routes/Routes";
 
 function App() {
   return (
-    <>
-    <Rotas/>
-    </>
-
+    <Routes/>
   );
 }
-//export : exporta o codigo de forma padrao
 export default App;
