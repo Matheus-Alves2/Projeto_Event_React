@@ -1,15 +1,15 @@
-
 import './App.css';
-import ListagemEventos from './pages/listagemEventos/ListagemEventos';
-import Rotas from './Routes/routes';
-
+import Rotas from './Routes/routes.jsx';
+//responsavel para criacao de telas
 function App() {
   return (
     <>
-      <Rotas/>
-      {/* <ListagemEventos/> */}
+   {/*chamar as paginas */} 
+    <Rotas/>
+   
     </>
   );
 }
 
+//responsavel para exportar um componente por arquivo
 export default App;

@@ -2,8 +2,10 @@ header{
     background-color: white;
 
     height: 75px;
+    width: 100%;
 
-    box-shadow: 1px 4px 4px 0px #0000008f;
+    /* Borda: */
+    box-shadow: 2px 4px 4px 0px #0000002f;
     position: relative;
 }
 
@@ -11,43 +13,58 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 100%;
+    
 }
 
 .cabecalho img{
-    height: 25px;
+    margin-top: 5px;
+    height: 30px;
+    margin-left: 65px;
+    margin-top: 20px;
 }
 
 .link_header{
-    margin-left: 50px;
+    margin-left: 60px;
+    
 
-    color: black;
-
+    color: #201849;
     text-decoration: none;
 }
 
-.Adm{
+/* @media screen and (max-width: 768px){
+    .cabecalho img{
+        height: 35px;
+    }
+
+    .link_header{
+        margin-left: 10px;
+    } */
+/* } */
+.nav_header{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+   
+    
+}
+
+.adm a{
     margin-right: 9px;
+    text-decoration: none;
+    color: #201849;
+
 }
 
-.Adm img{
-    width: 15px;
-    height: 13px;
-    margin-left: 10px;
+.adm{
+    margin-bottom: 10px;
 }
 
-/* @media screen and (max-width: 768px) {
-    .header-header img{
-        height: 15px;
-    }
-    .header-header{
-        justify-content: center;
-        align-items: center;
-    }
-    .link-header{
-        display: none;
-    }
-    .navas_header{
-        display: none;
-    }
-} */
+.adm img{
+    width: 20px;
+    height: 20px;
+    margin-left: 13px;
+    
+}
+

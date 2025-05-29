@@ -1,48 +1,69 @@
-.listagem {
-    /* height: 370px; */
+.listagem{
+    /* vamos retirar
+        header 
+        cadastro
+        footer */
+   
+    min-height: calc(100vh - (75px + 252px + 40px));
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+
+    background-color:#B51D44 ;
+
     padding: 40px 0;
-
-    background-color: #B51D44;
-    color: white;
-
-}
-
-.listagem h1 {
-    text-transform: uppercase;
-    color: white;
-    font-size: 19px;
+    margin-top: 150px;
+    max-width: 100%;
+    
 }
 
 .listagem hr {
-    max-width: 200px;
+    max-width: 300px;
     width: 100%;
     border-style: solid;
-    border-top-width: 1px;
-    border-color: white;
+    border-width: 1px;
+    border-color: #73061B;
     margin-top: 5px;
+}
+
+
+.listagem h1{
+    text-transform: uppercase;
     color: white;
+    font-size: 20px;
+
+    font-family: 'Poppins', 20px;
+    
 }
 
-.item_lista img {
+.listagem hr{
+    max-width: 300px;
+    width: 10%;
+    margin-top: 5px;
+
+    border-color: white;
+    border-top: 2px solid white;
+}
+
+.item_lista img{
     height: 20px;
+    
+    
 }
 
-.tabela {
-    width: 80%;
-    margin-top: 40px;
-
-    text-align: center;
-    border-bottom: 1px solid white;
-
-    margin-left: -60px;
-  
+.tabela{
+    width: 100%;
+    margin-top: 30px;
 
 }
 
+.tabela table{
+   width: 65%;
+   margin-left: 350px;
+   border-collapse: collapse;
+    
+}
 
 .tabela .table_cabecalho :first-child {
     width: 300px;
@@ -50,36 +71,70 @@
 }
 
 .tabela .table_cabecalho :nth-child(2) {
-    width: 760px;
+    /* width: 750px; */
     text-align: start;
 }
 
 .tabela .table_cabecalho th {
     border-bottom: 1px solid white;
-    width: 100px;
+    width: 600px;
     margin-top: 40px;
     
 }
 
-.item_lista td {
-    padding: 30px 5px 30px;
-    
+
+.item_lista td{
+    padding: 20px 0 5px 0;
+
+    color: white;
 }
 
-.tabela .item_lista :nth-child(2){
-    text-align: start;
+.item_lista{
+    text-align: center;
     
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
 }
 
-@media screen and (max-width:728px) {
-    .tabela{
-        font-size: 10px; 
-    }
-    .tabela .item_lista :nth-child(3){
-        width: 110px;
-    }
-    .listagem h1 {
-        font-size: large;
-    }
-    
+.cabecalho_tabela{
+    height: 40px;
+   
 }
+
+@media screen and (max-width: 768px){
+    /* 1px - 768px */
+    .tabela thead{
+        display: none;
+    }
+
+    /* Um elemento abaixo do outro: */
+    .item_lista td{
+        display: grid;
+        text-align: left;
+        padding: 10px 10px 10px 0;
+        grid-template-columns: 10ch auto;
+    }
+
+    .item_lista td::before{
+          /* Adiciona o data-cell do html e coloca os : depois */
+        content: attr(data-cell) ":";
+        font-weight: 700;
+        width: 80px;
+        text-align: left;
+    }
+
+    .item_lista td:last-child{
+        margin-bottom: 24px;
+    }
+
+    .item_lista td:first-child{
+        margin-top: 24px;
+    }
+}
+
+    .tabela p{
+        color: white;
+    }
+
+
+
