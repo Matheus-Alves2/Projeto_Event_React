@@ -2,7 +2,8 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import "./ListagemEventos.css"
 import Comentario from "../../assets/img/comentario.png"
-
+import Opcao1 from "../../assets/img/opcao.png"
+import Opcao2 from "../../assets/img/opcao2.png"
 import Toggle from "../../components/toggle/Toggle";
 
 
@@ -19,7 +20,7 @@ const ListagemEventos = () => {
                         <option value="" disabled selected>Todos os Eventos</option>
                         <option value="">op 1</option>
                         <option value="">op 2</option>
-                        <option value="">op 3</option>
+                        <option value=""> op 3</option>
                     </select>
                     <thead>
                         <tr className="table_evento">
