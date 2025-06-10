@@ -3,36 +3,35 @@ import Cadastro from "../../components/cadastro/Cadastro"
 import Lista from "../../components/lista/Lista"
 import Footer from "../../components/footer/Footer"
 import Banner from "../../assets/bannerTipoUsuario.png"
-import api from "../../Services/services"
 import Swal from 'sweetalert2'
+import api from "../../Services/services";
 import { useEffect, useState } from "react";
 
 const TipoUsuario = () => {
 
-    const[tipoUsuario, setTipoUsario] = useState ("")
-    const[listaTiposUsuarios, setListaTiposUsuarios] = useState({});
+    const [tipoUsuario, setTipoUsuario] = useState("")
+    const [listaTipoUsuario, setListaTipoUsuario] = useState([]);
+
+    function alertar(icone, mensagem) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: icone,
+            title: mensagem
+        });
+    }
 
 
-     function alertar(icone, mensagem) {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.onmouseenter = Swal.stopTimer;
-                    toast.onmouseleave = Swal.resumeTimer;
-                }
-            });
-            Toast.fire({
-                icon: icone,
-                title: mensagem
-            });
-        }
-    
-        
-    async function cadastrarTipoEvento(e){
+    async function cadastrarTipoUsuario(e){
         e.preventDefault();
         //Verificar se o input esta sendo cadastrado vazio
         if (tipoUsuario.trim() != "") {
@@ -40,11 +39,12 @@ const TipoUsuario = () => {
             //catch => lanca a excesao
         try{
             await api.post("tiposUsuarios", {tituloTipoUsuario: tipoUsuario});
-            setTipoUsario("");
+            setTipoUsuario("");
 
+            //============ alertar =======================
             let timerInterval;
                 Swal.fire({ 
-                title: "Cadastrando Titulo !",
+                title: "Cadastrando Tipo Usuario !",
                 html: "Demora apenas... <b></b> milliseconds.",
                 timer: 2000,
                 timerProgressBar: true,
@@ -64,7 +64,8 @@ const TipoUsuario = () => {
                     console.log("I was closed by the timer");
                 }
                 });
-            
+            //============ alertar =======================
+
             
         }catch(error){
             alertar("error", "Entre em contato com o suporte :(")
@@ -77,23 +78,26 @@ const TipoUsuario = () => {
     }
 
     async function listarTiposUsuarios(){
-        try {
-            const resposta = await api.get("tiposUsuarios");
-            setListaTiposUsuarios(resposta.data);
-        } catch (error) {
-            console.log(error);
-            
+
+            try{
+               const resposta = await api.get("tiposUsuarios");
+                setListaTipoUsuario(resposta.data);
+
+            }catch(error){
+                console.log(error);
+                
+            }
         }
-    }
 
-    useEffect(() => {
+
+        useEffect(() => {
         listarTiposUsuarios();
+        
+    }, [listaTipoUsuario]);
 
-    }, [listaTiposUsuarios]);
-
-    async function deletarTipoUsuario(id) {
-        try {
-            const result = await Swal.fire({
+    async function deletarTiposUsuarios(id) {
+    try {
+        const result = await Swal.fire({
             title: 'Tem certeza?',
             text: "Essa ação não poderá ser desfeita!",
             icon: 'warning',
@@ -110,17 +114,19 @@ const TipoUsuario = () => {
             listarTiposUsuarios();
             alertar("success", "Tipo de evento excluído!");
         }
-        } catch (error) {
-            console.error("Erro ao excluir:");
-            alertar("error", "Erro ao excluir tipo de evento. Veja o console.");
-        }
+    } catch (error) {
+        console.error("Erro ao excluir:");
+        alertar("error", "Erro ao excluir tipo de evento. Veja o console.");
     }
+}
 
-    async function editarTipoUsuario(tipoUsuario) {
+
+async function editarTiposUsuarios(tipoUsuario){
+
         const { value: novoTipoUsuario } = await Swal.fire({
-        title: "Edite seu tipo de usuario",
+        title: "Edite seu tipo de evento",
         input: "text",
-        inputLabel: "Novo Tipo de usuario",
+        inputLabel: "Novo Tipo de evento",
         inputValue:  tipoUsuario.tituloTipoUsuario,
         showCancelButton: true,
         inputValidator: (value) => {
@@ -134,40 +140,43 @@ const TipoUsuario = () => {
                 try {
                     // console.log(genero.nome);
                     // console.log(novoGenero);
-                    await api.put(`tiposUsuarios/${tipoUsuario.tituloTipoUsuario }`,{tituloTipoUsuario: novoTipoUsuario});
+                    await api.put(`tiposUsuarios/${tipoUsuario.idTipoUsuario}`,{tituloTipoUsuario: novoTipoUsuario});
                     Swal.fire(`O Tipo evento foi modificado para ${novoTipoUsuario}`);
                 } catch (error) {
                     console.log(error);     
                 }
         }
-    }
+    };
+
 
     return(
 
         <>
-        <Header 
-        nomeUsuario = "Administrador"
-        botaozinho = "none"
-        />
+        <Header />
         <main>
             <Cadastro 
                 tituloCadastro="CADASTRO TIPO DE USUÁRIO"
                 namePlace="Titulo"
                 visibilidade="none"
+                visiData="none"
+                visiIndefinido="none"
                 imagem= {Banner}
-                funcCadastro={cadastrarTipoEvento}
-                ValorInput={tipoUsuario}
-                setValorInput={setTipoUsario}
+                funcCadastro= {cadastrarTipoUsuario}
+                ValorInput = {tipoUsuario}
+                setValorInputTitulo={setTipoUsuario}
             />
             <Lista
-            
             tituloPagina="LISTA TIPO DE USUÁRIO"
-            visibilidade="none"
+            tituloDoEvento="Titulo"
+            visiDataEvento="none"
+            visiTipoEvento="none"
+            visiBotaoDescricao="none"
             visibol="none"
+            visiTituloDescricao="none"
             visi="none"
-            lista={listaTiposUsuarios}
-            funcDeletar={deletarTipoUsuario}
-            funcEditar={editarTipoUsuario}
+            lista={listaTipoUsuario}
+            funcDeletar={deletarTiposUsuarios}
+            funcEditar = {editarTiposUsuarios}
             />
             
         </main>
@@ -177,4 +186,4 @@ const TipoUsuario = () => {
     )
 }
 
-export default TipoUsuario
+export default TipoUsuario;

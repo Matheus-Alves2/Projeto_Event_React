@@ -1,91 +1,84 @@
-import "./Home.css"
-import Footer from "../../components/footer/Footer"
-import Header from "../../components/header/Header"
-import { Link } from 'react-router-dom'
-import Mapinha from "../../assets/mapinha.svg"
-import BannerHome from "../../assets/bannerHome.png"
+import "./Home.css";
+import { Link } from "react-router-dom"
+import Logo from "../../assets/logoEvent.svg"
+import TelaFundo from "../../assets/TelaFundoHome.png"
+import TelaFundoVisao from "../../assets/TelaHomeVisao.png"
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
-  return (   //tela Home 
+    return (
         <>
-            <Header
-                Usuario = "none"
-                naver="none"
-            />
-            <main>
-                <div className="banner-div-home">
-                    <img src={BannerHome} alt="Area de eventos da escola de informatica" />
+        <header>
+            <div className="layout_grid cabecalho">
+                <img src={Logo} alt="Logo Evento" />
+                <nav className="nav_header">
+                     <Link className="link_header" to="/Home" href="">Home</Link>
+                     <Link className="link_header" to="/ListaEventos" href="">Eventos</Link>
+                     <Link className="link_header" to="/TipoEvento" href="">Usuários</Link>
+                     <Link className="link_header" to="/" href="">Contatos</Link>
+                </nav>
+                <div className="Adm">
+                    <button>Logar</button>
                 </div>
 
-                <div className="cards-home">
+            </div>
+        </header>
 
-                    <h2>Próximos Eventos</h2>
-                    <hr />
+        <main>
+            <div className="organizandoHomeFundo">
+            <img src={TelaFundo} alt="" />
+            </div>
 
-                    <div className="card-pai">
-
-                        <div className="cardzinho">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet consecteturcorrupti tempora! Delectus fugia</p>
-                            <Link className="link-card" to="/Login">Conectar</Link>
-                        </div>
-
-                        <div className="cardzinho">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet consecteturcorrupti tempora! Delectus fugia</p>
-                            <Link className="link-card" to="/Login">Conectar</Link>
-                        </div>
-
-                        <div className="cardzinho">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet consecteturcorrupti tempora! Delectus fugia</p>
-                            <Link className="link-card" to="/Login">Conectar</Link>
-                        </div>
-
-                        <div className="cardzinho">
-                            <h2>Lorem</h2>
-                            <p>Lorem ipsum dolor sit amet consecteturcorrupti tempora! Delectus fugia</p>
-                            <Link className="link-card" to="/Login">Conectar</Link>
-                        </div>
-
-                    </div> 
-
+            <section className="orgProximosEventos">
+                <div className="tituloHome">
+                <h1>PRÓXIMOS EVENTOS</h1>
+                <hr />
                 </div>
 
-                <div className="segundo-banner">
-                    <h2>Visão</h2>
-                    <hr />
-                    <div className="segundo-p">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus neque ipsum voluptatibus animi laudantium enim eius fugiat dolor voluptas nesciunt quos asperiores rem, eum dicta, expedita, minus odit facere eaque? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ducimus aperiam recusandae, dolorem illum voluptatem, in nemo voluptas eum saepe deserunt officiis non dolores minima quos quam animi praesentium. Inventore?
-                        </p>
-                    </div>
+                <div className="orgArticles layout_grid">
+
+                    <article className="orgDentroDoArticle">
+                        <h3>Titulo do Evento</h3>
+
+                        <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                        <a href="">Conectar</a>
+                    </article>
+
+                    <article className="orgDentroDoArticle">
+                        <h3>Titulo do Evento</h3>
+
+                        <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                        <a href="">Conectar</a>
+                    </article>
+
+                    <article className="orgDentroDoArticle">
+                        <h3>Titulo do Evento</h3>
+
+                        <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                        <a href="">Conectar</a>
+                    </article>
+
+                    <article className="orgDentroDoArticle ">
+                        <h3>Titulo do Evento</h3>
+
+                        <p>Breve descrição do evento, pode ser um paragrafo pequeno</p>
+
+                        <a href="">Conectar</a>
+                    </article>
+
+
                 </div>
-
-                <div className="pre-footer">
-
-                    <h2>Contato</h2>
-                    <hr />
-
-                    <div className="pai-pre-footer">
-
-                        <div className="mapa">
-                            <img src={Mapinha} alt="" />
-                        </div>
-
-                        <div className="informacoes">
-                            <p>Rua Niterói, 180 - Centro</p>
-                            <p>São Caetano  do  Sul - SP</p>
-                            <p>(11) 4225-2000</p>
-                        </div>
-                       
-                    </div>
+                <div className="orgBannerVisao">
+                    <img src={TelaFundoVisao} alt="" />
                 </div>
-            </main>
-
-            <Footer />
+            </section>
+        </main>
+        
+        
         </>
     )
 }
-
-export default Home
+export default Home;

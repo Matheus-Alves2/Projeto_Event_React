@@ -1,126 +1,114 @@
-.banner-div-home img {
-    /*Classe do Banner*/
-    width: 100%;
+header{
+    background-color: white;
+
+    height: 75px;
+
+    box-shadow: 1px 4px 4px 0px #0000008f;
+    position: relative;
 }
 
-.cards-home hr {
-    max-width: 200px;
-    width: 100%;
-    margin-top: 7px;
-    margin-bottom: 50px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #B51D44;
-}
-
-.cards-home {
+.cabecalho{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.card-pai {
-    display: flex;
+.cabecalho img{
+    height: 25px;
 }
 
-.cardzinho {
-    font: "poppins";
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    height: 250px;
-    width: 225px;
-    margin-left: 15px;
-    margin-right: 15px;
-    border: 2px solid #821B47;
-    font-size: small;
-    border-radius: 5px;
-}
+.link_header{
+    margin-left: 45px;
 
-.link-card {
-    color: #B51D44;
+    color: black;
+
     text-decoration: none;
-    font-size: medium;
 }
 
-/* .segundo-banner img{
-    margin-top: 60px;
-    width: 100%;
-} */
+.Adm img{
+    width: 15px;
+    height: 13px;
+    margin-left: 10px;
+}
 
-.segundo-banner {
-    background-image: url("../../assets/banner2.png");
-    width: 100%;
-    height: 300px;
-    color: white;
+.cabecalho button{
+    height: 35px;
+    width: 80px;
+    background-color: #B51D44;
+    color: aliceblue;
+    border-radius: 8px;
+    border: 0px;
+}
 
+.orgProximosEventos{
+    height: 400px;
+}
+
+.organizandoHomeFundo img{
+    width: 100%;
+    height: 650px;
+}
+
+ .tituloHome{
+    margin-top: 50px;
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px
-}
-
-.segundo-banner h2 {
-    margin-top: 20px;
-
-}
-
-.segundo-banner hr {
-    max-width: 200px;
-    width: 100%;
-    margin-top: 7px;
-    margin-bottom: 50px;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.segundo-p {
-    width: 800px;
-    font-size: small;
-}
-
-.pre-footer {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid #00000055;
 }
 
-.pre-footer h2 {
-    margin-top: 20px;
+.tituloHome hr{
+    background-color: red;
+    height: 4px;
+    border-radius: 10px;
+    width: 300px;
 }
 
-.pre-footer hr {
-    max-width: 200px;
-    width: 100%;
-    margin-top: 7px;
-    margin-bottom: 50px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #B51D44;
-}
-
-.pai-pre-footer {
+.orgArticles {
     display: flex;
-    max-width: 100%s;
-
+    justify-content: space-between;
+    align-items: center;
 }
 
-.mapa {
-    margin-right: 20px;
+.orgArticles  article{
+    border-radius: 5px;
+    margin-top: 50px;
+    height: 250px;
+    width: 220px;
+    border: 2px solid #86224D;
 }
 
-.informacoes {
+.orgDentroDoArticle{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
 }
 
-.fim {
+.orgDentroDoArticle a{
+    color: #B51D44;
+    text-decoration:none;
+
+}
+
+.orgBannerVisao img{
+    height: 380px;
     width: 100%;
-    border-bottom: solid 2px #00000055;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .cabecalho{
+        justify-content: center;
+        align-items: center;
+    }
+    .link_header{
+        display: none;
+    }
+    .Adm{
+        display: none;
+    }
 }
