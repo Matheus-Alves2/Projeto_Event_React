@@ -42,6 +42,7 @@
     border-collapse: collapse;
   }
   
+  
   .table_cabecalho th {
     padding: 10px;
     text-align: center;
@@ -55,29 +56,27 @@
   
   .item_lista td {
     padding: 20px;
+    border-right: -300px;
   }
   
   .item_lista img {
     height: 20px;
     
-    
   }
 
 .tabela .table_cabecalho :first-child{
-  width: 400px;
+  width: 300px;
   
 }
 
   .tabela .table_cabecalho :nth-child(2){
-    /* width: 400px; */
-    text-align: end;
+    width: 400px;
+    text-align: start;
 }
 
-.tabela .item_lista :nth-child(3){
-     width: 400px;
+.tabela .item_lista :nth-child(2){
+  width: 400px;
 }
-
-
 
 
 
